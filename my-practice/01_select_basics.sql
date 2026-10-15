@@ -69,3 +69,28 @@ WHERE sales > 10;
 SELECT sales,customer_id
 FROM orders
 WHERE customer_id = 1;
+--GROUP BY AND AGGREGATES--
+SELECT * 
+FROM CUSTOMERS;
+--TOTAL SCORE OF EACH COUNTRY-
+SELECT country,SUM(score) AS total_score
+FROM customers
+GROUP BY country;
+--total scores and total customers--
+SELECT SUM(score) AS total_Score,
+count(id) as total_count,country
+FROM customers
+GROUP BY country;
+--avg score for each country--
+SELECT AVG(score) as avg_score,country
+FROM customers
+GROUP BY country;
+--country avg score whose avg is greater than 430-
+SELECT AVG(score) as avg_score,country
+FROM customers
+GROUP BY country
+HAVING  AVG(score) > 430;
+--stattic vavlues--
+SELECT id,first_name,
+'NEW CUSTOMERS' AS customer_type
+FROM customers;
