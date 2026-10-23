@@ -43,7 +43,7 @@ SELECT
     FirstName,
     LastName
 FROM Sales.Employees;
---employees whonn are also customers--
+--employees who are also customers--
 SELECT
     FirstName,
     LastName
