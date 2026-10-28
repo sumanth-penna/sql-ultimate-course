@@ -33,12 +33,11 @@ INNER JOIN Sales.Products  AS p ON o.ProductID  = p.ProductID;
 
 -- Q2. Which customers have never placed an order? Use a LEFT JOIN.
 -- Expected: Anna (CustomerID 5).
-SELECT c.Firstname,o.customerID
+SELECT c.CustomerID, c.FirstName
 FROM Sales.Customers AS c
 LEFT JOIN Sales.Orders AS o
-ON c.CustomerID = o.CustomerID
-WHERE c.CustomerID IS NULL;
-
+    ON c.CustomerID = o.CustomerID
+WHERE o.CustomerID IS NULL;
 
 
 
